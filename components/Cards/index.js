@@ -81,7 +81,6 @@ const technologyArticles = ({ data }) => {
 
 
 
-getArticles(logData);
 getArticles(bootstrapArticles)
 getArticles(javascriptArticles)
 getArticles(jqueryArticles)

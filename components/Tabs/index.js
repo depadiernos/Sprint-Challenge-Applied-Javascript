@@ -20,12 +20,19 @@ const getTopics = (callback) => {
 //     console.log(data);
 //   };
 
+const filterTopic = ({currentTarget}) => {
+  topic = currentTarget.textContent
+  filteredCards = document.querySelectorAll('.card')
+  filteredCards.forEach(card => card.dataset.topic != topic ? card.style.display = "none" : card.style.display = "block")
+}
+
 const tabComponents= ({data})=>{
     topicContainer = document.querySelector('.topics')
     data.topics.forEach(topic => {
       let tab = document.createElement('div')
       tab.classList.add('tab')
       tab.textContent = topic
+      tab.addEventListener('click', filterTopic)
       topicContainer.appendChild(tab)
     });
 
